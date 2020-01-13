@@ -41,6 +41,15 @@ async function main(){
             }
         });
 
+        let array = []
+        let charges = data.values[0]
+    
+        for (i = 0; i< charges.length; i++){
+            array.push(`${data.values[0][i]}: ${data.values[1][i]}`);
+        }
+
+        console.log(array)
+
         // Options para mandar o e-mail
 
         let hoje = new Date()
@@ -50,7 +59,7 @@ async function main(){
             from: 'ahmadziroteste@gmail.com',
             to: data.values[1][0],
             subject: `KPIS ${data.values[1][1]} ${month}`,
-            text: `Boa tarde ${data.values[1][1]}, suas KPIs do mês ${month} foram: ${data.values[0][2]}: ${data.values[1][2]}, ${data.values[0][3]}: ${data.values[1][3]}, ${data.values[0][4]}: ${data.values[1][4]}, ${data.values[0][5]}: ${data.values[1][5]}`
+            text: `Boa tarde ${data.values[1][1]}, suas KPIs do mês ${month} foram: ${array}`
         };
 
         // Operador para mandar
