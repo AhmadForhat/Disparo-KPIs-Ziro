@@ -1,3 +1,4 @@
+
 const nodemailer = require('nodemailer');
 var rp = require('request-promise-native');
 require('dotenv').config()
@@ -23,7 +24,7 @@ async function main(){
             "apiResource": "values",
             "apiMethod": "get",
             "spreadsheetId": process.env.sheetsId,
-            "range": "main!A1:F2"
+            "range": "main!A1:F3"
         },
         json: true
     }
@@ -41,30 +42,51 @@ async function main(){
             }
         });
 
-        let array = []
+        let arrayMud = []
+        let arrayBruno = []
         let charges = data.values[0]
     
         for (i = 0; i< charges.length; i++){
-            array.push(`${data.values[0][i]}: ${data.values[1][i]}`);
+            arrayMud.push(`${data.values[0][i]}: ${data.values[1][i]}`);
         }
 
-        console.log(array)
+        for (i = 0; i< charges.length; i++){
+            arrayBruno.push(`${data.values[0][i]}: ${data.values[2][i]}`);
+        }
+
+        console.log(arrayBruno)
+        console.log(arrayMud)
 
         // Options para mandar o e-mail
 
         let hoje = new Date()
         let month = hoje.getMonth()+1
 
-        let mailOptions = {
+        let mailOptionsBruno = {
+            from: 'ahmadziroteste@gmail.com',
+            to: data.values[2][0],
+            subject: `KPIS ${data.values[2][1]} ${month}`,
+            text: `Boa tarde ${data.values[2][1]}, suas KPIs do mês ${month} foram: ${arrayBruno}`
+        };
+
+        transporter.sendMail(mailOptionsBruno, await function(err,data){
+            if(err){
+                console.log('Aconteceu um erro')
+            }else{
+                console.log('Email foi enviado!')
+            }
+        })
+
+        let mailOptionsMud = {
             from: 'ahmadziroteste@gmail.com',
             to: data.values[1][0],
             subject: `KPIS ${data.values[1][1]} ${month}`,
-            text: `Boa tarde ${data.values[1][1]}, suas KPIs do mês ${month} foram: ${array}`
+            text: `Boa tarde ${data.values[1][1]}, suas KPIs do mês ${month} foram: ${arrayMud}`
         };
 
         // Operador para mandar
 
-        transporter.sendMail(mailOptions, await function(err,data){
+        transporter.sendMail(mailOptionsMud, await function(err,data){
             if(err){
                 console.log('Aconteceu um erro')
             }else{
