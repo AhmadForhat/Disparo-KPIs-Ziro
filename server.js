@@ -1,7 +1,6 @@
 
 const nodemailer = require('nodemailer');
 const rp = require('request-promise-native');
-const enviarEmail = require('./apoio/mail')
 require('dotenv').config()
 
 //GoogleSheets GET
@@ -33,17 +32,15 @@ async function main(){
     try {
         let data = await rp(optionsGoogle)
         console.log(data)
-        // Transporter
-
-        let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth:{
-                user: process.env.user,
-                pass: process.env.pass
-            }
-        });
-
+        
         const enviarEmail = (number) => {
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth:{
+                    user: process.env.user,
+                    pass: process.env.pass
+                }
+            });
             let array = []
             let charges = data.values[0]
         
