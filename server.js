@@ -1,6 +1,7 @@
 
 const nodemailer = require('nodemailer');
-var rp = require('request-promise-native');
+const rp = require('request-promise-native');
+const enviarEmail = require('./apoio/mail')
 require('dotenv').config()
 
 //GoogleSheets GET
@@ -42,57 +43,40 @@ async function main(){
             }
         });
 
-        let arrayMud = []
-        let arrayBruno = []
-        let charges = data.values[0]
-    
-        for (i = 0; i< charges.length; i++){
-            arrayMud.push(`${data.values[0][i]}: ${data.values[1][i]}`);
+        const enviarEmail = (number) => {
+            let array = []
+            let charges = data.values[0]
+        
+            for (i = 0; i< charges.length; i++){
+                array.push(`${data.values[0][i]}: ${data.values[number][i]}`);
+            }
+        
+            console.log(array)
+        
+            // Options para mandar o e-mail
+        
+            let hoje = new Date()
+            let month = hoje.getMonth()+1
+        
+            let mailOptions = {
+                from: 'ahmadziroteste@gmail.com',
+                to: data.values[number][0],
+                subject: `KPIS ${data.values[number][1]} ${month}`,
+                text: `Boa tarde ${data.values[number][1]}, suas KPIs do mês ${month} foram: ${array}`
+            };
+        
+            transporter.sendMail(mailOptions, function(err,data){
+                if(err){
+                    console.log('Aconteceu um erro')
+                }else{
+                    console.log('Email foi enviado!')
+                }
+            })
         }
 
-        for (i = 0; i< charges.length; i++){
-            arrayBruno.push(`${data.values[0][i]}: ${data.values[2][i]}`);
-        }
+        enviarEmail(1)
+        enviarEmail(2)
 
-        console.log(arrayBruno)
-        console.log(arrayMud)
-
-        // Options para mandar o e-mail
-
-        let hoje = new Date()
-        let month = hoje.getMonth()+1
-
-        let mailOptionsBruno = {
-            from: 'ahmadziroteste@gmail.com',
-            to: data.values[2][0],
-            subject: `KPIS ${data.values[2][1]} ${month}`,
-            text: `Boa tarde ${data.values[2][1]}, suas KPIs do mês ${month} foram: ${arrayBruno}`
-        };
-
-        transporter.sendMail(mailOptionsBruno, await function(err,data){
-            if(err){
-                console.log('Aconteceu um erro')
-            }else{
-                console.log('Email foi enviado!')
-            }
-        })
-
-        let mailOptionsMud = {
-            from: 'ahmadziroteste@gmail.com',
-            to: data.values[1][0],
-            subject: `KPIS ${data.values[1][1]} ${month}`,
-            text: `Boa tarde ${data.values[1][1]}, suas KPIs do mês ${month} foram: ${arrayMud}`
-        };
-
-        // Operador para mandar
-
-        transporter.sendMail(mailOptionsMud, await function(err,data){
-            if(err){
-                console.log('Aconteceu um erro')
-            }else{
-                console.log('Email foi enviado!')
-            }
-        })
     } catch (error) {
         console.log(error)
     }
