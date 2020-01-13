@@ -1,1 +1,1 @@
-# Disparo-KPIs-Ziro
+# Automatização disparo de E-mails Ziro
