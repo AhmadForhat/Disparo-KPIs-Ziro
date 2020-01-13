@@ -1,1 +1,1 @@
-# Automatização disparo de E-mail Ziro
+# Envio de e-mail Ziro
