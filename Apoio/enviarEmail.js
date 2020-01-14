@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const enviarEmail = (number) => {
+const enviarEmail = (number, data) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
@@ -9,24 +9,24 @@ const enviarEmail = (number) => {
         }
     });
     let array = []
+    let constructorHtml = ""
     let charges = data.values[0]
 
     for (i = 0; i< charges.length; i++){
-        array.push(`${data.values[0][i]}: ${data.values[number][i]}`);
+        constructorHtml += `<li><h3>${data.values[0][i]}</h3> ${data.values[number][i]}</li>`
     }
-
-    console.log(array)
 
     // Options para mandar o e-mail
 
     let hoje = new Date()
     let month = hoje.getMonth()+1
+    let year = hoje.getFullYear()
 
     let mailOptions = {
         from: 'ahmadziroteste@gmail.com',
         to: data.values[number][0],
-        subject: `KPIS ${data.values[number][1]} ${month}`,
-        text: `Boa tarde ${data.values[number][1]}, suas KPIs do mês ${month} foram: ${array}`
+        subject: `KPI's ${data.values[number][1]}, ${hoje}`,
+        html: `<h2>KPI's de venda do dia ${hoje}</h2><ul>${constructorHtml}</ul><style>color:red</style>`
     };
 
     transporter.sendMail(mailOptions, function(err,data){
