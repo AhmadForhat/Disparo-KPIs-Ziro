@@ -40,7 +40,7 @@ require('dotenv').config()
             "apiResource": "values",
             "apiMethod": "get",
             "spreadsheetId": process.env.sheetsId,
-            "range": "main!O3:R100"
+            "range": "main!O2:R100"
         },
         json: true
     }
@@ -56,7 +56,7 @@ require('dotenv').config()
             "apiResource": "values",
             "apiMethod": "get",
             "spreadsheetId": process.env.sheetsId,
-            "range": "main!S3:V100"
+            "range": "main!S2:V100"
         },
         json: true
     }
