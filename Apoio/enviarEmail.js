@@ -95,19 +95,19 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                                                         <tbody>
                                                             <tr>
                                                                 <td align="end" vertical-align="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
-                                                                <td align="start" vertical-align="top" style="padding-left: 20px" width="50%">${data.values[number][2]}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Vendido 2019</b></td>
                                                                 <td align="start" vertical-align="top" style="padding-left: 20px" width="50%">${data.values[number][3]}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Variação</b></td>
+                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Vendido 2019</b></td>
                                                                 <td align="start" vertical-align="top" style="padding-left: 20px" width="50%">${data.values[number][4]}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Desempenho</b></td>
+                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Variação</b></td>
                                                                 <td align="start" vertical-align="top" style="padding-left: 20px" width="50%">${data.values[number][5]}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="end" vertical-align="top" style="padding-right: 20px"><b>Desempenho</b></td>
+                                                                <td align="start" vertical-align="top" style="padding-left: 20px" width="50%">${data.values[number][6]}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -170,7 +170,7 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                             </table>
                         </td>
                     </tr>
-                </table>>
+                </table>
             </center>
             </body>
             </html>
