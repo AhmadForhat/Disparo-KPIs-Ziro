@@ -8,6 +8,20 @@ const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
             pass: process.env.pass
         }
     });
+    function corDesempenho(data){
+        if(data.values[1][6] = "Abaixo da meta x2"){
+            return "color: #881600"
+        }if(data.values[1][6] = "Abaixo da Meta x2,5"){
+            return "color: #E53A40"
+        }if(data.values[1][6] = "Abaixo da Meta x3"){
+            return "color: #FFBC42"
+        }if(data.values[1][6] = "Meta atingida"){
+            return "color: #5A9367"
+        }else{
+            return "color: black"
+        }
+    }
+
     let constructorAssessorMes = ""
     let chargesMes = dataMes.values
 
@@ -94,7 +108,7 @@ const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Desempenho</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px; font-weight: bold" width="50%">${data.values[1][6]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(data)}" width="50%">${data.values[1][6]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
