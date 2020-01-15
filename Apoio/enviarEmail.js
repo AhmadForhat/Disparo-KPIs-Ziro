@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const enviarEmail = (number, data, dataMes, dataDia) => {
+const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
@@ -46,14 +46,14 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
 
     let mailOptions = {
         from: 'ahmadziroteste@gmail.com',
-        to: data.values[number][0],
-        subject: `KPI's ${data.values[number][1]}, ${dateHoje}`,
+        to: arrayEmail[number],
+        subject: `KPI's ${data.values[0][1]}, ${dateHoje}`,
         html: 
             `
             <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
             <tr>
                 <td align="center" valign="top">
-                    <table border="1" cellpadding="0" cellspacing="0" width="100%" id="emailContainer">
+                    <table style="max-width: 800px" border="1" cellpadding="0" cellspacing="0" width="100%" id="emailContainer">
                         <tr>
                             <td align="center" valign="top">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="emailHeader">
@@ -63,7 +63,7 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                                             <div style="margin-bottom: 20px"></div>
                                             <h2 style="display: inline; text-transform: uppercase; background: linear-gradient(transparent 60%, rgba(255,228,0,0.75) 100%)">ZIRO</h2>
                                             <h3 style="text-transform: uppercase">Relatório Vendas</h3>
-                                            <p>${dataMes.values[4][3]}</p>
+                                            <p>${data.values[1][1]}</p>
                                             <div style="margin-bottom: 20px"></div>
                                             <!-- END HEADER -->
                                         </td>
@@ -73,7 +73,7 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                         </tr>
                         <tr>
                             <td align="center" valign="top">
-                            <table style="max-width: 800px" border="1" cellpadding="0" cellspacing="0" width="100%" max id="emailContainer">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="emailBody">
                                     <tr>
                                         <td align="center" valign="top">
                                             <!-- THIS IS THE BODY OF THE EMAIL -->
@@ -82,27 +82,27 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                                                 <tbody>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][3]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][3]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2019</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][4]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][4]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Variação</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][5]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][5]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Desempenho</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][6]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px; font-weight: bold" width="50%">${data.values[1][6]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][7]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][7]}</td>
                                                     </tr>
                                                     <tr>
                                                         <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2019</b></td>
-                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[number][8]}</td>
+                                                        <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][8]}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

@@ -23,7 +23,7 @@ require('dotenv').config()
             "apiResource": "values",
             "apiMethod": "get",
             "spreadsheetId": process.env.sheetsId,
-            "range": "main!A1:M100"
+            "range": "main!A1:M2"
         },
         json: true
     }
@@ -65,10 +65,11 @@ require('dotenv').config()
         let data = await rp(optionsGoogle)
         let dataMes = await rp(optionsGoogleAssessorMes)
         let dataDia = await rp(optionsGoogleAssessorDia)
-        let i = data.values.length
-        while(i>1){
+        let arrayEmail = (data.values[1][0]).split(",")
+        let i = arrayEmail.length
+        while(i>0){
             i--
-            enviarEmail(i,data, dataMes, dataDia)
+            enviarEmail(arrayEmail,i,data, dataMes, dataDia)
         }
     } catch (error) {
         console.log(error)
