@@ -50,18 +50,10 @@ const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
 
     // Options para mandar o e-mail
 
-    function convertDate(inputFormat) {
-        function pad(s) { return (s < 10) ? '0' + s : s; }
-        var d = new Date(inputFormat)
-        return [pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('/')
-      }
-    const date = new Date()
-    const dateHoje = convertDate(date.setDate(date.getDate()))
-
     let mailOptions = {
         from: 'ahmadziroteste@gmail.com',
         to: arrayEmail[number],
-        subject: `KPI's ${data.values[0][1]}, ${dateHoje}`,
+        subject: `VENDAS ${data.values[1][1]}`,
         html: 
             `
             <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
