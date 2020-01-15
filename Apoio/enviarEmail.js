@@ -63,7 +63,7 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                                             <div style="margin-bottom: 20px"></div>
                                             <h2 style="display: inline; text-transform: uppercase; background: linear-gradient(transparent 60%, rgba(255,228,0,0.75) 100%)">ZIRO</h2>
                                             <h3 style="text-transform: uppercase">Relatório Vendas</h3>
-                                            <p>24 de janeiro de 2020</p>
+                                            <p>${dataMes.values[4][3]}</p>
                                             <div style="margin-bottom: 20px"></div>
                                             <!-- END HEADER -->
                                         </td>
@@ -73,7 +73,7 @@ const enviarEmail = (number, data, dataMes, dataDia) => {
                         </tr>
                         <tr>
                             <td align="center" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="emailBody">
+                            <table style="max-width: 800px" border="1" cellpadding="0" cellspacing="0" width="100%" max id="emailContainer">
                                     <tr>
                                         <td align="center" valign="top">
                                             <!-- THIS IS THE BODY OF THE EMAIL -->
