@@ -173,15 +173,22 @@ const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
             </tr>
         </table>
         `
-    };
-
-    transporter.sendMail(mailOptions, function(err,data){
-        if(err){
-            console.log("Deu erro", err)
-        }else{
-            console.log("Enviado com sucesso!")
-        }
-    })
+    }
+    const transporterPromise = (mailOptions) => {
+        return new Promise((resolve,reject)=>{
+            transporter.sendMail(mailOptions, function(err,data){
+                if(err){
+                    console.log("Deu erro", err)
+                }else{
+                    resolve(data)
+                    console.log("Enviado com sucesso!")
+                }
+            })
+        })
+    }
+    transporterPromise(mailOptions)
+    .then(data => console.log("Email enviado com sucesso!", data))
+    .catch(err => console.log(err))
 }
 
 module.exports = enviarEmail
