@@ -181,14 +181,12 @@ const enviarEmail = (arrayEmail, number, data, dataMes, dataDia) => {
                     console.log("Deu erro", err)
                 }else{
                     resolve(data)
-                    console.log("Enviado com sucesso!")
+                    console.log("Enviado com sucesso!", data)
                 }
             })
         })
     }
     transporterPromise(mailOptions)
-    .then(data => console.log("Email enviado com sucesso!", data))
-    .catch(err => console.log(err))
 }
 
 module.exports = enviarEmail
