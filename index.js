@@ -66,10 +66,16 @@ require('dotenv').config()
         let dataMes = await rp(optionsGoogleAssessorMes)
         let dataDia = await rp(optionsGoogleAssessorDia)
         let arrayEmail = (data.values[1][0]).split(",")
+        let now = new Date();
+        let hora = now.getUTCHours()
+        if(hora == 15){
         let i = arrayEmail.length
         while(i>0){
             i--
-            enviarEmail(arrayEmail,i,data, dataMes, dataDia)
+            Promise.all([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
+        }
+        }else{
+            console.log('horário errado!')
         }
     } catch (error) {
         console.log(error)
