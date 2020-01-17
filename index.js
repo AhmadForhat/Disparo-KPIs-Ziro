@@ -70,10 +70,12 @@ require('dotenv').config()
         let hora = now.getUTCHours()
         if(hora == 22){
         let i = arrayEmail.length
+        let funcoesPromise = []
         while(i>0){
             i--
-            Promise.all([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
+            funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
         }
+            Promise.all(funcoesPromise)
         }else{
             console.log('horário errado!')
         }
