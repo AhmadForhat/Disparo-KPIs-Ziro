@@ -66,9 +66,10 @@ require('dotenv').config()
         let dataMes = await rp(optionsGoogleAssessorMes)
         let dataDia = await rp(optionsGoogleAssessorDia)
         let arrayEmail = (data.values[1][0]).split(",")
-        let now = new Date();
-        let hora = now.getUTCHours()
-        if(hora == 22){
+        const now = new Date();
+        const hora = now.getUTCHours()
+        const diaSemana = now.getDay()
+        if(hora == 22 && diaSemana != 6 && diaSemana != 0){
         let i = arrayEmail.length
         let funcoesPromise = []
         while(i>0){
@@ -77,7 +78,7 @@ require('dotenv').config()
         }
             Promise.all(funcoesPromise)
         }else{
-            console.log('horário errado!')
+            console.log('Horário ou data não disponível para disparo!')
         }
     } catch (error) {
         console.log(error)
