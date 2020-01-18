@@ -68,8 +68,9 @@ require('dotenv').config()
         let arrayEmail = (data.values[1][0]).split(",")
         const now = new Date();
         const hora = now.getUTCHours()
+        const minuto = now.getUTCMinutes()
         const diaSemana = now.getUTCDay()
-        if(hora == 22 && diaSemana != 6 && diaSemana != 0){
+        if(hora == 22 && minuto < 10 && diaSemana != 6 && diaSemana != 0){
         let i = arrayEmail.length
         let funcoesPromise = []
         while(i>0){
