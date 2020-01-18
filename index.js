@@ -77,12 +77,14 @@ require('dotenv').config()
             i--
             funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
         }
-            Promise.all(funcoesPromise)
+            return Promise.all(funcoesPromise)
         }else{
             console.log('Horário ou data não disponível para disparo!')
+            return data
         }
     } catch (error) {
         console.log(error)
+        return error
     }
 }
 
