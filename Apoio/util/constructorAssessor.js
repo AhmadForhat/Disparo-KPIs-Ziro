@@ -2,7 +2,7 @@ const constructorAssessor = (data,posicaoArray) => {
     const arrayAssessor = data.values[1][posicaoArray].split("#")
     let constructor = ""
     for (i = 0; i< arrayAssessor.length; i += 3){
-        if(arrayAssessor[3] != ""){
+        if(arrayAssessor[3] != 0){
             constructor += 
             `<tr>
             <td align="center" valign="top">${arrayAssessor[i]}</td>
