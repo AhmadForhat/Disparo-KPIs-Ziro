@@ -1,7 +1,7 @@
 const constructorAssessor = require('./constructorAssessor')
 const corDesempenho = require('./corDesempenho')
 
-const html = (data, dataMes, dataDia) => {
+const html = (data) => {
     return  `
     <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
     <tr>
@@ -69,12 +69,7 @@ const html = (data, dataMes, dataDia) => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataMes.values[1][3]}</td>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataMes.values[2][3]}</td>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataMes.values[3][3]}</td>
-                                            </tr>
-                                            ${constructorAssessor(dataMes)}
+                                            ${constructorAssessor(data,9)}
                                         </tbody>
                                     </table>
                                     <table width="100%" cellpadding="2">
@@ -87,12 +82,7 @@ const html = (data, dataMes, dataDia) => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataDia.values[1][3]}</td>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataDia.values[2][3]}</td>
-                                                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${dataDia.values[3][3]}</td>
-                                            </tr>
-                                            ${constructorAssessor(dataDia)}
+                                            ${constructorAssessor(data,12)}
                                         </tbody>
                                     </table>
                                     <div style="margin-bottom: 20px"></div>
