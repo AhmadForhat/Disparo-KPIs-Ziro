@@ -21,10 +21,9 @@ const enviarEmail = async (arrayEmail, number, data, dataMes, dataDia) => {
         return new Promise((resolve,reject)=>{
             transporter.sendMail(mailOptions, function(err,data){
                 if(err){
-                    reject()
-                    console.log("Deu erro", err)
+                    reject(err)
                 }else{
-                    resolve("Enviado com sucesso!", data)
+                    resolve(data)
                 }
             })
         })

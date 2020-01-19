@@ -19,7 +19,7 @@ require('dotenv').config()
         if(hora == 22 && diaSemana != 6 && diaSemana != 0){
             while(i>0){
                 i--
-                funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
+                funcoesPromise.push(enviarEmail(arrayEmail,i,data, dataMes, dataDia))
             }
             console.log(await Promise.all(funcoesPromise))
         }
