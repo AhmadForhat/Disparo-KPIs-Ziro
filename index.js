@@ -16,12 +16,13 @@ require('dotenv').config()
         const diaSemana = now.getUTCDay()
             let i = arrayEmail.length
             let funcoesPromise = []
+        if(hora == 22 && minuto < 10 && diaSemana != 6 && diaSemana != 0){
             while(i>0){
                 i--
                 funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
             }
-            const resultado = await Promise.all(funcoesPromise)
-            console.log(resultado)
+            console.log(await Promise.all(funcoesPromise))
+        }
     } catch (error) {
         console.log(error)
     }
