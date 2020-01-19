@@ -17,12 +17,12 @@ require('dotenv').config()
         const minuto = now.getUTCMinutes()
         const diaSemana = now.getUTCDay()
         if(hora == 22 && minuto < 10 && diaSemana != 6 && diaSemana != 0){
-        let i = arrayEmail.length
-        let funcoesPromise = []
-        while(i>0){
-            i--
-            funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
-        }
+            let i = arrayEmail.length
+            let funcoesPromise = []
+            while(i>0){
+                i--
+                funcoesPromise.push([enviarEmail(arrayEmail,i,data, dataMes, dataDia)])
+            }
             return await Promise.all(funcoesPromise)
         }else{
             console.log('Horário ou data não disponível para disparo!')
