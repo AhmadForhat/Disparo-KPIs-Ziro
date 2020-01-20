@@ -6,7 +6,7 @@ const constructorAssessor = (data,posicaoArray) => {
             constructor += 
             `<tr>
             <td align="center" valign="top">${arrayAssessor[i]}</td>
-            <td align="center" valign="top">R$ ${arrayAssessor[i+1]}</td>
+            <td align="center" valign="top">${arrayAssessor[i+1]}</td>
             <td align="center" valign="top">${arrayAssessor[i+2]}</td>
             </tr>
             `
