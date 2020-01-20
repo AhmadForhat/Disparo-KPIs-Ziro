@@ -3,7 +3,7 @@ const constructorAssessor = (data,posicaoArray) => {
     let constructor = ""
     for (i = 0; i< arrayAssessor.length; i += 3){
         if(arrayAssessor[3] != 0){
-            if(i = 0){
+            if(i == 0){
                     constructor += 
                 `<tr>
                 <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[i]}</td>
@@ -24,9 +24,9 @@ const constructorAssessor = (data,posicaoArray) => {
         }else{
             constructor = 
             `<tr>
-            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">Total</td>
-            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">R$ ${0}</td>
-            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${0}</td>
+            <td align="center" valign="top">Total</td>
+            <td align="center" valign="top">R$ ${0}</td>
+            <td align="center" valign="top">${0}</td>
             </tr>
             `
         }
