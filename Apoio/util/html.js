@@ -43,7 +43,7 @@ const html = (data) => {
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Variação</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][5]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px ${corDesempenho(data)}" width="50%">${data.values[1][5]}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Desempenho</b></td>
