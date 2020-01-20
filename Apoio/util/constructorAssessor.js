@@ -1,5 +1,5 @@
 const constructorAssessor = (data,posicaoArray) => {
-        if(data.values[1][posicaoArray].includes("#")){
+        if(data.values[1][posicaoArray]){
         const arrayAssessor = data.values[1][posicaoArray].split("#")
         let constructor = ""
         for (i = 0; i< arrayAssessor.length; i += 3){
