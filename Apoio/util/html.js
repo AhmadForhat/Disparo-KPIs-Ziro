@@ -51,11 +51,11 @@ const html = (data) => {
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][7]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][7]} atendidos</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2019</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][8]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][8]} atendidos</td>
                                             </tr>
                                         </tbody>
                                     </table>
