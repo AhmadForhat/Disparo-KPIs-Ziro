@@ -9,7 +9,7 @@ require('dotenv').config()
     try {
         const data = await rp(optionsGoogle("main!A1:M2"))
             try {
-                if(data.values[1][0]){
+                if(data.values[1][9].startsWith("Total") || data.values[1][0] == ""){
                     const arrayEmail = (data.values[1][0]).split(",")
                     const now = new Date();
                     const hora = now.getUTCHours()
@@ -21,10 +21,23 @@ require('dotenv').config()
                             i--
                             funcoesPromise.push(enviarEmail(arrayEmail,i,data))
                         }
-                        console.log(await Promise.all(funcoesPromise))
                     }
+                        console.log(await Promise.all(funcoesPromise))
                 }else{
-                    console.log("Deu erro no split de e-mails", data.values[1][0])
+                        const arrayEmail = (data.values[1][0]).split(",")
+                        const now = new Date();
+                        const hora = now.getUTCHours()
+                        const diaSemana = now.getUTCDay()
+                        if(hora == 22 && diaSemana != 6 && diaSemana != 0){
+                            let i = arrayEmail.length
+                            let funcoesPromise = []
+                            while(i>0){
+                                i--
+                                funcoesPromise.push(enviarEmail(arrayEmail,i,data))
+                            }
+                        }
+                            console.log("SetTimeOut")
+                            console.log(await Promise.all(funcoesPromise))
                 }
             } catch (error) {
                 console.log("Erro no disparo de email", error)
