@@ -36,7 +36,6 @@ require('dotenv').config()
                                 funcoesPromise.push(enviarEmail(arrayEmail,i,data))
                             }
                         }
-                            console.log("SetTimeOut")
                             console.log(await Promise.all(funcoesPromise))
                 }
             } catch (error) {
