@@ -9,6 +9,7 @@ require('dotenv').config()
     try {
         const data = await rp(optionsGoogle("main!A1:M2"))
             try {
+                let funcoesPromise = []
                 if(data.values[1][9].startsWith("Total") || data.values[1][0] == ""){
                     const arrayEmail = (data.values[1][0]).split(",")
                     const now = new Date();
@@ -16,7 +17,6 @@ require('dotenv').config()
                     const diaSemana = now.getUTCDay()
                     if(hora == 22 && diaSemana != 6 && diaSemana != 0){
                         let i = arrayEmail.length
-                        let funcoesPromise = []
                         while(i>0){
                             i--
                             funcoesPromise.push(enviarEmail(arrayEmail,i,data))
