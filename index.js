@@ -7,31 +7,31 @@ require('dotenv').config()
 
 const retryHttp = async (data) => {
     try {
-                let funcoesPromise = []
+      let funcoesPromise = []
         if(data.values[1][9].startsWith("Total") || data.values[1][3] == '#N/A'){
-                    const arrayEmail = (data.values[1][0]).split(",")
-                    const now = new Date();
-                    const hora = now.getUTCHours()
-                    const diaSemana = now.getUTCDay()
-                    if(hora == 22 && diaSemana != 6 && diaSemana != 0){
-                        let i = arrayEmail.length
-                        while(i>0){
-                            i--
-                            funcoesPromise.push(enviarEmail(arrayEmail,i,data))
-                        }
-                    }
-                        console.log(await Promise.all(funcoesPromise))
+            const arrayEmail = (data.values[1][0]).split(",")
+            const now = new Date();
+            const hora = now.getUTCHours()
+            const diaSemana = now.getUTCDay()
+            if(hora == 22 && diaSemana != 6 && diaSemana != 0){
+                let i = arrayEmail.length
+                while(i>0){
+                    i--
+                    funcoesPromise.push(enviarEmail(arrayEmail,i,data))
+                }
+            }
+            console.log(await Promise.all(funcoesPromise))
             return "OK"
-                }else{
+        }else{
             console.log("Não ok!")
             return new Promise(resolve =>
               setTimeout(() => resolve(retryHttp(data)), 1000)
               );
-                            }
+        }
     } catch (error) {
       console.log(error);
       return error;
-                        }
+    }
   };
   
   const resultLoop = async (data) => {
