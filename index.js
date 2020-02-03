@@ -5,12 +5,10 @@ require('dotenv').config()
 
 //GoogleSheets GET
 
- async function main(){
+const retryHttp = async (data) => {
     try {
-        const data = await rp(optionsGoogle("main!A1:M2"))
-            try {
                 let funcoesPromise = []
-                if(data.values[1][9].startsWith("Total") || data.values[1][0] == ""){
+        if(data.values[1][9].startsWith("Total") || data.values[1][3] == '#N/A'){
                     const arrayEmail = (data.values[1][0]).split(",")
                     const now = new Date();
                     const hora = now.getUTCHours()
@@ -23,18 +21,9 @@ require('dotenv').config()
                         }
                     }
                         console.log(await Promise.all(funcoesPromise))
+            return "OK"
                 }else{
-                    setTimeout(async () => {
-                        const arrayEmail = (data.values[1][0]).split(",")
-                        const now = new Date();
-                        const hora = now.getUTCHours()
-                        const diaSemana = now.getUTCDay()
-                        if(hora == 22 && diaSemana != 6 && diaSemana != 0){
-                            let i = arrayEmail.length
-                            let funcoesPromise = []
-                            while(i>0){
-                                i--
-                                funcoesPromise.push(enviarEmail(arrayEmail,i,data))
+            console.log("Não ok!")
                             }
                         }
                             console.log(await Promise.all(funcoesPromise))
