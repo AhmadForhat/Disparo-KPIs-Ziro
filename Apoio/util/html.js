@@ -2,6 +2,15 @@ const constructorAssessor = require('./constructorAssessor')
 const corDesempenho = require('./corDesempenho')
 
 const html = (data) => {
+    const descricaoMeta = data.values[1][6]
+    const dataHoje = data.values[1][1]
+    const vendido2020 = data.values[1][3]
+    const vendido2019 = data.values[1][4]
+    const variacao = data.values[1][5]
+    const clientes2019 = data.values[1][8]
+    const clientes2020 = data.values[1][7]
+    const assessoresMes = data.values[1][9]
+    const assessoresDia = data.values[1][12]
     return  `
     <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
     <tr>
@@ -16,7 +25,7 @@ const html = (data) => {
                                     <div style="margin-bottom: 20px"></div>
                                     <h2 style="display: inline; text-transform: uppercase; background: linear-gradient(transparent 60%, rgba(255,228,0,0.75) 100%)">ZIRO</h2>
                                     <h3 style="text-transform: uppercase">Relatório Vendas</h3>
-                                    <p>${data.values[1][1]}</p>
+                                    <p>${dataHoje}</p>
                                     <div style="margin-bottom: 20px"></div>
                                     <!-- END HEADER -->
                                 </td>
@@ -35,27 +44,27 @@ const html = (data) => {
                                         <tbody>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][3]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2020}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2019</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][4]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2019}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Variação</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(data)}" width="50%">${data.values[1][5]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(descricaoMeta)}" width="50%">${variacao}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Desempenho</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(data)}" width="50%">${data.values[1][6]}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(descricaoMeta)}" width="50%">${descricaoMeta}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][7]} atendidos</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2020} atendidos</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2019</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${data.values[1][8]} atendidos</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2019} atendidos</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -69,7 +78,7 @@ const html = (data) => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            ${constructorAssessor(data,9)}
+                                            ${constructorAssessor(assessoresMes)}
                                         </tbody>
                                     </table>
                                     <table width="100%" cellpadding="2">
@@ -82,7 +91,7 @@ const html = (data) => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            ${constructorAssessor(data,12)}
+                                            ${constructorAssessor(assessoresDia)}
                                         </tbody>
                                     </table>
                                     <div style="margin-bottom: 20px"></div>
