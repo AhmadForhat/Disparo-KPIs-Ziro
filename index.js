@@ -8,7 +8,7 @@ require('dotenv').config()
 const retryHttp = async (data) => {
     try {
       let funcoesPromise = []
-        if(data.values[1][9].startsWith("Total") || data.values[1][3] == '#N/A'){
+        if(data.values[1][9].startsWith("Total") && data.values[1][3] != '#N/A' && data.values[1][5] != '#N/A' && data.values[1][6] != '#N/A'){
             const arrayEmail = (data.values[1][0]).split(",")
             const now = new Date();
             const hora = now.getUTCHours()
@@ -20,8 +20,7 @@ const retryHttp = async (data) => {
                     funcoesPromise.push(enviarEmail(arrayEmail,i,data))
                 }
             }
-            console.log(await Promise.all(funcoesPromise))
-            return "OK"
+            return await Promise.all(funcoesPromise)
         }else{
             console.log("Não ok!")
             return new Promise(resolve =>
