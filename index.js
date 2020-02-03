@@ -24,7 +24,13 @@ const retryHttp = async (data) => {
             return "OK"
                 }else{
             console.log("Não ok!")
+            return new Promise(resolve =>
+              setTimeout(() => resolve(retryHttp(data)), 1000)
+              );
                             }
+    } catch (error) {
+      console.log(error);
+      return error;
                         }
                             console.log(await Promise.all(funcoesPromise))
                     }, 2000);
