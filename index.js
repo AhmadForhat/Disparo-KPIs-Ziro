@@ -32,9 +32,18 @@ const retryHttp = async (data) => {
       console.log(error);
       return error;
                         }
-                            console.log(await Promise.all(funcoesPromise))
-                    }, 2000);
-                }
+  };
+  
+  const resultLoop = async (data) => {
+    const result = await retryHttp(data);
+    console.log(result);
+  };
+  
+ async function main(){
+    try {
+        const data = await rp(optionsGoogle("main!A1:M2"))
+            try {
+                resultLoop(data)
             } catch (error) {
                 console.log("Erro no disparo de email", error)
             }
