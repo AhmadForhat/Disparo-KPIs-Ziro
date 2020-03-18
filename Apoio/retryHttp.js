@@ -1,6 +1,6 @@
 const enviarEmail = require('./enviarEmail')
 
-const retryHttp = async (baseKpisVendas,kpisVendas) => {
+const retryHttp = async (kpisVendas) => {
     try {
         let funcoesPromise = []
         const vendaHoje = kpisVendas[0].assessores
@@ -14,14 +14,14 @@ const retryHttp = async (baseKpisVendas,kpisVendas) => {
                 let i = arrayEmail.length
                 while(i>0){
                     i--
-                    funcoesPromise.push(enviarEmail(arrayEmail,i,baseKpisVendas))
+                    funcoesPromise.push(enviarEmail(arrayEmail,i,kpisVendas))
                 }
             }
             return await Promise.all(funcoesPromise)
         }else{
             console.log('Não ok!')
             return new Promise(resolve =>
-                setTimeout(() => resolve(retryHttp(baseKpisVendas,kpisVendas)), 4000)
+                setTimeout(() => resolve(retryHttp(kpisVendas)), 4000)
             )
         }
     } catch (error) {

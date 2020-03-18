@@ -6,7 +6,7 @@ const arrayObject = require('@ziro/array-object')
 const resulTimeOut = async () => {
     const baseKpisVendas = await rp(optionsGoogle('main!A1:M2'))
     const kpisVendas = arrayObject(baseKpisVendas)
-    const result = await retryHttp(baseKpisVendas,kpisVendas)
+    const result = await retryHttp(kpisVendas)
     console.log(result)
 }
 
