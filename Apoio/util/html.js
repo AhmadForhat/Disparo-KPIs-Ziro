@@ -2,15 +2,15 @@ const constructorAssessor = require('./constructorAssessor')
 const corDesempenho = require('./corDesempenho')
 
 const html = (data) => {
-    const descricaoMeta = data.values[1][6]
-    const dataHoje = data.values[1][1]
-    const vendido2020 = data.values[1][3]
-    const vendido2019 = data.values[1][4]
-    const variacao = data.values[1][5]
-    const clientes2019 = data.values[1][8]
-    const clientes2020 = data.values[1][7]
-    const assessoresMes = data.values[1][9]
-    const assessoresDia = data.values[1][12]
+    const descricaoMeta = data.desempenho
+    const dataHoje = data.hoje
+    const vendido2020 = data.venda2020
+    const vendido2019 = data.venda2019
+    const variacao = data.variacao
+    const clientes2019 = data.clientes2019
+    const clientes2020 = data.clientes2020
+    const assessoresMes = data.assessores
+    const assessoresDia = data.assessoreshoje
     return  `
     <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
     <tr>
