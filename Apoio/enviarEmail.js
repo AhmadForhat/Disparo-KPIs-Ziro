@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer')
-const html = require('./util/html')
 
-const enviarEmail = async (arrayEmail, number, data) => {
+const enviarEmail = async (arrayEmail, number, data,corpoEmail,titulo) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
@@ -15,8 +14,8 @@ const enviarEmail = async (arrayEmail, number, data) => {
     const mailOptions = {
         from: 'relatorios.ziro@gmail.com',
         to: arrayEmail[number],
-        subject: `VENDAS ${diaDeHoje}`,
-        html: html(data[0])
+        subject: `${titulo} ${diaDeHoje}`,
+        html:corpoEmail
     }
     return new Promise((resolve,reject)=>{
         transporter.sendMail(mailOptions, function(err,data){
