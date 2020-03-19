@@ -1,4 +1,4 @@
-const optionsGoogle = (range) => {
+const optionsBatchGet = ranges =>{
     const url = 'https://sheets.ziro.app/.netlify/functions/api'
     const username = process.env.userSheets
     const password = process.env.pdwSheets
@@ -13,12 +13,12 @@ const optionsGoogle = (range) => {
         },
         body : {
             'apiResource': 'values',
-            'apiMethod': 'get',
+            'apiMethod': 'batchGet',
             'spreadsheetId': process.env.sheetsId,
-            'range': range
+            'ranges': ranges
         },
         json: true
     }
 }
 
-module.exports = optionsGoogle
+module.exports = optionsBatchGet
