@@ -7,7 +7,7 @@ const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
 
 const resulTimeOut = async () => {
     // Requisições
-    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa!A1:J2']))
+    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa revisao!A1:J2']))
     const [baseKpisVendas,baseKpisFluxoCaixa] = requests.valueRanges
     const kpisFluxoCaixa = arrayObject(baseKpisFluxoCaixa)
     const kpisVendas = arrayObject(baseKpisVendas)
@@ -21,9 +21,9 @@ const resulTimeOut = async () => {
     const vendaHoje = kpisVendas[0].assessores
     const destinatariosVendas = kpisVendas[0].destinatarios
     const condicionalHoraLoopVendas = vendaHoje.startsWith('Total') && destinatariosVendas != ''
-    //Fluxo de caixa
+    //Fluxo de caixa Revisão
     //Funções de horários Fluxo de Caixa
-    const condicionalHoraFluxoCaixa = hora == 22 && diaSemana != 6 && diaSemana != 0
+    const condicionalHoraFluxoCaixa = hora == 19 && diaSemana != 6 && diaSemana != 0
     // Condicional de loop Fluxo de Caixa
     const saldoHojeCedo = kpisFluxoCaixa[0].saldoHojeCedo
     const dispesasDia = kpisFluxoCaixa[0].dispesasDia
