@@ -19,4 +19,4 @@ const resulTimeOut = async () => {
     console.log(resultFluxoCaixaRevisao)
 }
 
-module.exports = resulTimeOut
+resulTimeOut()

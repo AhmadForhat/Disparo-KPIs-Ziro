@@ -2,7 +2,6 @@ const retryHttp = require('./retryHttp')
 const rp = require('request-promise-native')
 const optionsGoogle = require('./solicitacaoSheets')
 const arrayObject = require('@ziro/array-object')
-const htmlVendas = require('./util/htmlVendas')
 const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
 
 const resulTimeOut = async () => {
@@ -22,4 +21,4 @@ const resulTimeOut = async () => {
     console.log(resultFluxoCaixa)
 }
 
-module.exports = resulTimeOut
+resulTimeOut()

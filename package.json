@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "revisaoFluxoCaixa": "node ./Apoio/sendFluxoCaixaRevisao.js",
+    "enviarFluxoCaixa": "node ./Apoio/sendFluxoCaixa.js"
   },
   "keywords": [],
   "author": "",
