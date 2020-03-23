@@ -7,9 +7,10 @@ const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
 
 const resulTimeOut = async () => {
     // Requisições
-    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa!A1:J2']))
-    const [baseKpisVendas,baseKpisFluxoCaixa] = requests.valueRanges
+    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa!A1:J2','fluxo de caixa Revisao!A1:J2']))
+    const [baseKpisVendas,baseKpisFluxoCaixa, baseKpisFluxoCaixaRevisao] = requests.valueRanges
     const kpisFluxoCaixa = arrayObject(baseKpisFluxoCaixa)
+    const kpisFluxoCaixaRevisao = arrayObject(baseKpisFluxoCaixaRevisao)
     const kpisVendas = arrayObject(baseKpisVendas)
     //Vendas
     // Funções de horários Vendas
@@ -21,17 +22,21 @@ const resulTimeOut = async () => {
     const vendaHoje = kpisVendas[0].assessores
     const destinatariosVendas = kpisVendas[0].destinatarios
     const condicionalHoraLoopVendas = vendaHoje.startsWith('Total') && destinatariosVendas != ''
-    //Fluxo de caixa
+    //Fluxo de caixa --> Oficial
     //Funções de horários Fluxo de Caixa
     const condicionalHoraFluxoCaixa = hora == 22 && diaSemana != 6 && diaSemana != 0
     // Condicional de loop Fluxo de Caixa
     const saldoHojeCedo = kpisFluxoCaixa[0].saldoHojeCedo
     const dispesasDia = kpisFluxoCaixa[0].dispesasDia
     const condicionalLoopFluxoCaixa = saldoHojeCedo != '' && dispesasDia != ''
+    //Fluxo de caixa --> Bruno
+    //Funções de horários Fluxo de Caixa
+    const condicionalHoraFluxoCaixaRevisao = hora == 19 && diaSemana != 6 && diaSemana != 0
     // Resultados
     const resultVendas = await retryHttp(kpisVendas,htmlVendas,'Vendas',condicionalVendas,condicionalHoraLoopVendas)
     const resultFluxoCaixa = await retryHttp(kpisFluxoCaixa,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixa,condicionalLoopFluxoCaixa)
-    console.log(resultVendas,resultFluxoCaixa)
+    const resultFluxoCaixaRevisao = await retryHttp(kpisFluxoCaixaRevisao,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixaRevisao,condicionalLoopFluxoCaixa)
+    console.log(resultVendas,resultFluxoCaixa,resultFluxoCaixaRevisao)
 }
 
 module.exports = resulTimeOut
