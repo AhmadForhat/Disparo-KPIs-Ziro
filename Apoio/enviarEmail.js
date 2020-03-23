@@ -5,7 +5,7 @@ const enviarEmail = async (arrayEmail, number, data,corpoEmail,titulo) => {
         service: 'gmail',
         auth:{
             user: process.env.user,
-            pass: process.env.pdw
+            pass: process.env.pass
         }
     })
 

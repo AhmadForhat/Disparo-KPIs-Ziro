@@ -3,6 +3,7 @@ const rp = require('request-promise-native')
 const optionsGoogle = require('./solicitacaoSheets')
 const arrayObject = require('@ziro/array-object')
 const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
+require('dotenv').config()
 
 const resulTimeOut = async () => {
     // Requisições
@@ -20,5 +21,13 @@ const resulTimeOut = async () => {
     const resultFluxoCaixa = await retryHttp(kpisFluxoCaixa,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixa,condicionalLoopFluxoCaixa)
     console.log(resultFluxoCaixa)
 }
+  
+async function main(){
+    try {
+        resulTimeOut()
+    } catch (error) {
+        console.log('Erro no disparo de email', error)
+    }
+}
 
-resulTimeOut()
+main()
