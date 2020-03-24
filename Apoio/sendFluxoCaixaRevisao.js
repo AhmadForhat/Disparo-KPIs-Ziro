@@ -16,7 +16,7 @@ const resulTimeOut = async () => {
     const condicionalLoopFluxoCaixa = saldoHojeCedo != '' && dispesasDia != ''
     const condicionalHoraFluxoCaixaRevisao = true
     // Resultados
-    const resultFluxoCaixaRevisao = await retryHttp(kpisFluxoCaixaRevisao,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixaRevisao,condicionalLoopFluxoCaixa)
+    const resultFluxoCaixaRevisao = await retryHttp(kpisFluxoCaixaRevisao,htmlFluxoCaixa,'Fluxo de Caixa Revisão',condicionalHoraFluxoCaixaRevisao,condicionalLoopFluxoCaixa)
     console.log(resultFluxoCaixaRevisao)
 }
   
