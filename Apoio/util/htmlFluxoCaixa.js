@@ -135,7 +135,7 @@ const html = (data) => {
                             <tr>
                                 <td align="center" valign="top">
                                     <!-- THIS IS THE FOOTER OF THE EMAIL -->
-                                    <q>"Money is a terrible master, but an excellent servant."</q>
+                                    <q>Money is a terrible master, but an excellent servant.</q>
                                     <!-- END FOOTER -->
                                 </td>
                             </tr>
