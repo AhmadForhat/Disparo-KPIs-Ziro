@@ -2,7 +2,7 @@ const constructorAssessor = (dadoAssessores) => {
     if(dadoAssessores){
         const arrayAssessor = dadoAssessores.split('#')
         let constructor = ''
-        for (let i = 4; i< arrayAssessor.length; i += 4){
+        for (let i = 0; i< arrayAssessor.length; i += 4){
             if(arrayAssessor[4] != 0){
                 if(i == 0){
                     constructor += 
