@@ -49,20 +49,20 @@ const html = (data) => {
                                             <tr>
                                             <td align="center" valign="top">Manhã</td>
                                             <td align="center" valign="top">${arraySaldoHojeCedo[0]}</td>
+                                            <td align="center" valign="top">${arraySaldoHojeCedo[1]}</td>
                                             <td align="center" valign="top">${arraySaldoHojeCedo[2]}</td>
-                                            <td align="center" valign="top">${arraySaldoHojeCedo[3]}</td>
                                             </tr>
                                             <tr>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">Tarde</td>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[0]}</td>
+                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[1]}</td>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[2]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[3]}</td>
                                             </tr>
                                             <tr>
                                             <td align="center" valign="top">Balanço</td>
                                             <td align="center" valign="top">${arraySaldoBalanco[0]}</td>
+                                            <td align="center" valign="top">${arraySaldoBalanco[1]}</td>
                                             <td align="center" valign="top">${arraySaldoBalanco[2]}</td>
-                                            <td align="center" valign="top">${arraySaldoBalanco[3]}</td>
                                             </tr>
                                         </tbody>
                                     </table>
