@@ -1,5 +1,6 @@
 const constructorFluxoFuturo = require('./constructorFluxoFuturo')
 const constructorDespesas = require('./constructorDespesas')
+const constructorReembolsaveis = require('./constructorReembolsaveis')
 
 const html = (data) => {
     const dataHoje = data.hoje
@@ -35,7 +36,7 @@ const html = (data) => {
                     <td align="center" valign="top">
                     <!-- Inicio saldo de hoje -->
                                     <table width="100%" cellpadding="2">
-                                        <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Saldos de hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0px 0px 20px 0px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Saldos de hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Período</th>
@@ -81,13 +82,13 @@ const html = (data) => {
                                         </tbody>
                                     </table>
                                     <table width="100%" cellpadding="2">
-                                    <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                    <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Amanhã<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                     <thead>
                                         <tr>
-                                            <th align="center" valign="top">Descrição</th>
-                                            <th align="center" valign="top">Detalhes</th>
-                                            <th align="center" valign="top">Valor</th>
-                                            <th align="center" valign="top">Saída</th>
+                                            <th align="center" valign="top" width="30%">Descrição</th>
+                                            <th align="center" valign="top" width="30%">Detalhes</th>
+                                            <th align="center" valign="top" width="15%">Valor</th>
+                                            <th align="center" valign="top" width="15%">Saída</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -95,19 +96,32 @@ const html = (data) => {
                                     </tbody>
                                 </table>
                                 <table width="100%" cellpadding="2">
-                                <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Amanhã<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                 <thead>
                                     <tr>
-                                        <th align="center" valign="top">Descrição</th>
-                                        <th align="center" valign="top">Detalhes</th>
-                                        <th align="center" valign="top">Valor</th>
-                                        <th align="center" valign="top">Saída</th>
+                                    <th align="center" valign="top" width="30%">Descrição</th>
+                                    <th align="center" valign="top" width="30%">Detalhes</th>
+                                    <th align="center" valign="top" width="15%">Valor</th>
+                                    <th align="center" valign="top" width="15%">Saída</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 ${constructorDespesas(data.despesasAmanha)}
                                 </tbody>
                             </table>
+                            <table width="100%" cellpadding="2">
+                            <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas Reembolsáveis<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                            <thead>
+                                <tr>
+                                    <th align="center" valign="top" width="30%">Status</th>
+                                    <th align="center" valign="top" width="30%">Valor</th>
+                                    <th align="center" valign="top" width="30%">Envios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            ${constructorReembolsaveis(data.reembolsaveis)}
+                            </tbody>
+                        </table>
                                     <div style="margin-bottom: 20px"></div>
                                     <!-- END BODY -->
                                 </td>
@@ -121,7 +135,7 @@ const html = (data) => {
                             <tr>
                                 <td align="center" valign="top">
                                     <!-- THIS IS THE FOOTER OF THE EMAIL -->
-                                    <q>Do or do not. There is no try.</q>
+                                    <q>"Money is a terrible master, but an excellent servant."</q>
                                     <!-- END FOOTER -->
                                 </td>
                             </tr>

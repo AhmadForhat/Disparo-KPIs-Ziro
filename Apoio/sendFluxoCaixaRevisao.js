@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const resulTimeOut = async () => {
     // Requisições
-    const requests = await rp(optionsGoogle(['fluxo de caixa Revisao!A1:J2']))
+    const requests = await rp(optionsGoogle(['fluxo de caixa Revisao!A1:K2']))
     const [baseKpisFluxoCaixaRevisao] = requests.valueRanges
     const kpisFluxoCaixaRevisao = arrayObject(baseKpisFluxoCaixaRevisao)
     // Condicional de loop Fluxo de Caixa

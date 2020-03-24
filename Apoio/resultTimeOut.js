@@ -7,7 +7,7 @@ const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
 
 const resulTimeOut = async () => {
     // Requisições
-    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa!A1:J2','fluxo de caixa revisao!A1:J2']))
+    const requests = await rp(optionsGoogle(['vendas!A1:M2','fluxo de caixa!A1:K2','fluxo de caixa revisao!A1:K2']))
     const [baseKpisVendas,baseKpisFluxoCaixa, baseKpisFluxoCaixaRevisao] = requests.valueRanges
     const kpisFluxoCaixa = arrayObject(baseKpisFluxoCaixa)
     const kpisFluxoCaixaRevisão = arrayObject(baseKpisFluxoCaixaRevisao)

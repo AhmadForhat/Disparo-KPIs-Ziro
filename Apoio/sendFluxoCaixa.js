@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const resulTimeOut = async () => {
     // Requisições
-    const requests = await rp(optionsGoogle(['fluxo de caixa!A1:J2']))
+    const requests = await rp(optionsGoogle(['fluxo de caixa!A1:K2']))
     const [baseKpisFluxoCaixa] = requests.valueRanges
     const kpisFluxoCaixa = arrayObject(baseKpisFluxoCaixa)
     //Fluxo de caixa --> Oficial
