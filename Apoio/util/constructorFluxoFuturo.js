@@ -2,7 +2,7 @@ const constructorAssessor = (dadoAssessores) => {
     if(dadoAssessores){
         const arrayAssessor = dadoAssessores.split('#')
         let constructor = ''
-        for (let i = 0; i< arrayAssessor.length; i += 5){
+        for (let i = 0; i< arrayAssessor.length; i += 4){
             if(arrayAssessor[3] != 0){
                 if(i == 0){
                     constructor += 
@@ -11,7 +11,6 @@ const constructorAssessor = (dadoAssessores) => {
                 <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[i+1]}</td>
                 <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[i+2]}</td>
                 <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[i+3]}</td>
-                <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[i+4]}</td>
                 </tr>
                 `
                 }else{
@@ -21,7 +20,6 @@ const constructorAssessor = (dadoAssessores) => {
                 <td align="center" valign="top">${arrayAssessor[i+1]}</td>
                 <td align="center" valign="top">${arrayAssessor[i+2]}</td>
                 <td align="center" valign="top">${arrayAssessor[i+3]}</td>
-                <td align="center" valign="top">${arrayAssessor[i+4]}</td>
                 </tr>
                 `
                 }
@@ -31,7 +29,6 @@ const constructorAssessor = (dadoAssessores) => {
             `<tr>
             <td align="center" valign="top">${0}</td>
             <td align="center" valign="top">R$ ${0}</td>
-            <td align="center" valign="top">${0}</td>
             <td align="center" valign="top">${0}</td>
             <td align="center" valign="top">${0}</td>
             </tr>
@@ -46,7 +43,6 @@ const constructorAssessor = (dadoAssessores) => {
     <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[1]}</td>
     <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[2]}</td>
     <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[3]}</td>
-    <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[4]}</td>
     </tr>
     `
         console.log('Erro na split')

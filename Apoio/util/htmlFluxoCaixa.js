@@ -39,7 +39,6 @@ const html = (data) => {
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Período</th>
-                                                <th align="center" valign="top">Saldo Operação</th>
                                                 <th align="center" valign="top">Saldo Caixa Int.</th>
                                                 <th align="center" valign="top">Saldo Inter</th>
                                                 <th align="center" valign="top">Saldo Aporte</th>
@@ -47,25 +46,22 @@ const html = (data) => {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">Manhã</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeCedo[0]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeCedo[1]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeCedo[2]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeCedo[3]}</td>
+                                            <td align="center" valign="top">Manhã</td>
+                                            <td align="center" valign="top">${arraySaldoHojeCedo[0]}</td>
+                                            <td align="center" valign="top">${arraySaldoHojeCedo[2]}</td>
+                                            <td align="center" valign="top">${arraySaldoHojeCedo[3]}</td>
                                             </tr>
                                             <tr>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">Tarde</td>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[0]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[1]}</td>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[2]}</td>
                                             <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoHojeTarde[3]}</td>
                                             </tr>
                                             <tr>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">Balanço</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoBalanco[0]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoBalanco[1]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoBalanco[2]}</td>
-                                            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arraySaldoBalanco[3]}</td>
+                                            <td align="center" valign="top">Balanço</td>
+                                            <td align="center" valign="top">${arraySaldoBalanco[0]}</td>
+                                            <td align="center" valign="top">${arraySaldoBalanco[2]}</td>
+                                            <td align="center" valign="top">${arraySaldoBalanco[3]}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -75,7 +71,6 @@ const html = (data) => {
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Data</th>
-                                                <th align="center" valign="top">Saldo Operação</th>
                                                 <th align="center" valign="top">Saldo Caixa Int.</th>
                                                 <th align="center" valign="top">Saldo Inter</th>
                                                 <th align="center" valign="top">Saldo Aporte</th>
@@ -90,11 +85,9 @@ const html = (data) => {
                                     <thead>
                                         <tr>
                                             <th align="center" valign="top">Descrição</th>
-                                            <th align="center" valign="top">Valor</th>
                                             <th align="center" valign="top">Detalhes</th>
+                                            <th align="center" valign="top">Valor</th>
                                             <th align="center" valign="top">Saída</th>
-                                            <th align="center" valign="top">Natureza</th>
-                                            <th align="center" valign="top">Finalidade</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -106,11 +99,9 @@ const html = (data) => {
                                 <thead>
                                     <tr>
                                         <th align="center" valign="top">Descrição</th>
-                                        <th align="center" valign="top">Valor</th>
                                         <th align="center" valign="top">Detalhes</th>
+                                        <th align="center" valign="top">Valor</th>
                                         <th align="center" valign="top">Saída</th>
-                                        <th align="center" valign="top">Natureza</th>
-                                        <th align="center" valign="top">Finalidade</th>
                                     </tr>
                                 </thead>
                                 <tbody>
