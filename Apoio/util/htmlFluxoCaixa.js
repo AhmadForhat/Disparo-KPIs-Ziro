@@ -36,7 +36,7 @@ const html = (data) => {
                     <td align="center" valign="top">
                     <!-- Inicio saldo de hoje -->
                                     <table width="100%" cellpadding="2">
-                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0px 0px 20px 0px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Saldos de hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                        <caption style="font-weight: bold; padding: 20px 0; margin-bottom: 20px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Saldos de hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Período</th>
@@ -82,7 +82,7 @@ const html = (data) => {
                                         </tbody>
                                     </table>
                                     <table width="100%" cellpadding="2">
-                                    <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Amanhã<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                    <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                     <thead>
                                         <tr>
                                             <th align="center" valign="top" width="30%">Descrição</th>
@@ -96,7 +96,7 @@ const html = (data) => {
                                     </tbody>
                                 </table>
                                 <table width="100%" cellpadding="2">
-                                <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Hoje<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                <caption style="font-weight: bold; padding: 20px 0; margin: 20px 0; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Despesas de Amanhã<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                 <thead>
                                     <tr>
                                     <th align="center" valign="top" width="30%">Descrição</th>
