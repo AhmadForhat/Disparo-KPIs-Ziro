@@ -33,16 +33,6 @@ const constructorAssessor = (dadoAssessores) => {
             }
         }
         return constructor
-    }else{
-        const constructor = 
-    `<tr>
-    <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)" width="30%">${arrayAssessor[0]}</td>
-    <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)" width="30%">${arrayAssessor[1]}</td>
-    <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)" width="30%">${arrayAssessor[2]}</td>
-    </tr>
-    `
-        console.log('Erro na split')
-        return constructor
     }
 }
 
