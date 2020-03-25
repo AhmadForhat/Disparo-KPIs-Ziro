@@ -11,7 +11,7 @@ const html = (data) => {
     const arraySaldoHojeTarde = saldoHojeTarde.split('#')
     const arraySaldoBalanco = saldoHojeBalanco.split('#')
     return  `
-    <table style="font-family: Arial" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+    <table style="font-family: Arial" font-size="12px" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
     <tr>
         <td align="center" valign="top">
             <table style="max-width: 800px" border="1" cellpadding="0" cellspacing="0" width="100%" id="emailContainer">
@@ -40,9 +40,9 @@ const html = (data) => {
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Período</th>
-                                                <th align="center" valign="top">Saldo Caixa Int.</th>
-                                                <th align="center" valign="top">Saldo Inter</th>
-                                                <th align="center" valign="top">Saldo Aporte</th>
+                                                <th align="center" valign="top">Caixa Int.</th>
+                                                <th align="center" valign="top">Inter</th>
+                                                <th align="center" valign="top">Aporte</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,9 +72,9 @@ const html = (data) => {
                                         <thead>
                                             <tr>
                                                 <th align="center" valign="top">Data</th>
-                                                <th align="center" valign="top">Saldo Caixa Int.</th>
-                                                <th align="center" valign="top">Saldo Inter</th>
-                                                <th align="center" valign="top">Saldo Aporte</th>
+                                                <th align="center" valign="top">Caixa Int.</th>
+                                                <th align="center" valign="top">Inter</th>
+                                                <th align="center" valign="top">Aporte</th>
                                             </tr>
                                         </thead>
                                         <tbody>
