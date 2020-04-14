@@ -2,6 +2,7 @@ const constructorAssessor = require('./constructorAssessor')
 const corDesempenho = require('./corDesempenho')
 
 const html = (data) => {
+    const dataMes = data.mes
     const descricaoMeta = data.desempenho
     const dataHoje = data.hoje
     const vendido2020 = data.venda2020
@@ -40,7 +41,7 @@ const html = (data) => {
                                 <td align="center" valign="top">
                                     <!-- THIS IS THE BODY OF THE EMAIL -->
                                     <table width="100%" cellpadding="2">
-                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0 0 20px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>Janeiro 2020 VS 2019<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0 0 20px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>${dataMes} 2020 VS 2019<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                         <tbody>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
