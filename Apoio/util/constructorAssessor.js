@@ -1,8 +1,17 @@
 const constructorAssessor = (dadoAssessores) => {
     if(dadoAssessores){
         const arrayAssessor = dadoAssessores.split('#')
+        console.log(arrayAssessor)
         let constructor = ''
-        for (i = 0; i< arrayAssessor.length; i += 3){
+        if(arrayAssessor.length === 4){
+            return `<tr>
+            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[0]}</td>
+            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[1]}</td>
+            <td align="center" valign="top" style="border-bottom: 1px dotted rgba(0,0,0,0.1)">${arrayAssessor[2]}</td>
+            </tr>
+            `
+        }
+        for (let i = 0; i< arrayAssessor.length; i += 3){
             if(arrayAssessor[3] != 0){
                 if(i == 0){
                     constructor += 

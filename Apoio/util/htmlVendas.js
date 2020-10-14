@@ -53,11 +53,7 @@ const html = (data) => {
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Variação</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(descricaoMeta)}" width="50%">${variacao}</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="end" valign="top" style="padding-right: 20px"><b>Desempenho</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold; ${corDesempenho(descricaoMeta)}" width="50%">${descricaoMeta}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px; font-weight: bold" width="50%">${variacao}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>

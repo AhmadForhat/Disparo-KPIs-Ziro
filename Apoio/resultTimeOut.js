@@ -3,7 +3,7 @@ const rp = require('request-promise-native')
 const optionsGoogle = require('./solicitacaoSheets')
 const arrayObject = require('@ziro/array-object')
 const htmlVendas = require('./util/htmlVendas')
-const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
+// const htmlFluxoCaixa = require('./util/htmlFluxoCaixa')
 
 const resulTimeOut = async () => {
     // Requisições
@@ -38,9 +38,9 @@ const resulTimeOut = async () => {
     const condicionalLoopFluxoCaixaRevisao = saldoHojeCedoRevisao != '' && dispesasDiaRevisao != ''
     //Resultados
     const resultVendas = await retryHttp(kpisVendas,htmlVendas,'Vendas',condicionalVendas,condicionalHoraLoopVendas)
-    const resultFluxoCaixa = await retryHttp(kpisFluxoCaixa,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixa,condicionalLoopFluxoCaixa)
-    const resultFluxoCaixaRevisao = await retryHttp(kpisFluxoCaixaRevisão,htmlFluxoCaixa,'Fluxo de Caixa Revisão',condicionalHoraFluxoCaixaRevisao,condicionalLoopFluxoCaixaRevisao)
-    console.log(resultVendas,resultFluxoCaixa,resultFluxoCaixaRevisao)
+    // const resultFluxoCaixa = await retryHttp(kpisFluxoCaixa,htmlFluxoCaixa,'Fluxo de Caixa',condicionalHoraFluxoCaixa,condicionalLoopFluxoCaixa)
+    // const resultFluxoCaixaRevisao = await retryHttp(kpisFluxoCaixaRevisão,htmlFluxoCaixa,'Fluxo de Caixa Revisão',condicionalHoraFluxoCaixaRevisao,condicionalLoopFluxoCaixaRevisao)
+    console.log(resultVendas)
 }
 
 module.exports = resulTimeOut
