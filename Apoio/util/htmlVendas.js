@@ -41,14 +41,14 @@ const html = (data) => {
                                 <td align="center" valign="top">
                                     <!-- THIS IS THE BODY OF THE EMAIL -->
                                     <table width="100%" cellpadding="2">
-                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0 0 20px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>${dataMes} 2020 VS 2019<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
+                                        <caption style="font-weight: bold; padding: 20px 0; margin: 0 0 20px; background: #222; color: #fff; text-transform: uppercase"><span style="color: #FFDD00; font-size: 20px">.&nbsp;</span>${dataMes} 2021 VS 2020<span style="color: #FFDD00; font-size: 20px">&nbsp;.</span></caption>
                                         <tbody>
                                             <tr>
-                                                <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
+                                                <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2021</b></td>
                                                 <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2020}</td>
                                             </tr>
                                             <tr>
-                                                <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2019</b></td>
+                                                <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
                                                 <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2019}</td>
                                             </tr>
                                             <tr>
@@ -56,11 +56,11 @@ const html = (data) => {
                                                 <td align="start" valign="top" style="padding-left: 20px; font-weight: bold" width="50%">${variacao}</td>
                                             </tr>
                                             <tr>
-                                                <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
+                                                <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2021</b></td>
                                                 <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2020} atendidos</td>
                                             </tr>
                                             <tr>
-                                                <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2019</b></td>
+                                                <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
                                                 <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2019} atendidos</td>
                                             </tr>
                                         </tbody>
