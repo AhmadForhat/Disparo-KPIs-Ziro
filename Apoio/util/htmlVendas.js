@@ -5,11 +5,11 @@ const html = (data) => {
     const dataMes = data.mes
     const descricaoMeta = data.desempenho
     const dataHoje = data.hoje
+    const vendido2021 = data.venda2021
     const vendido2020 = data.venda2020
-    const vendido2019 = data.venda2019
     const variacao = data.variacao
-    const clientes2019 = data.clientes2019
     const clientes2020 = data.clientes2020
+    const clientes2021 = data.clientes2021
     const assessoresMes = data.assessores
     const assessoresDia = data.assessoreshoje
     return  `
@@ -45,11 +45,11 @@ const html = (data) => {
                                         <tbody>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2021</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2020}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2021}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Vendido 2020</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2019}</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${vendido2020}</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Variação</b></td>
@@ -57,11 +57,11 @@ const html = (data) => {
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2021</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2020} atendidos</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2021} atendidos</td>
                                             </tr>
                                             <tr>
                                                 <td align="end" valign="top" style="padding-right: 20px"><b>Clientes 2020</b></td>
-                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2019} atendidos</td>
+                                                <td align="start" valign="top" style="padding-left: 20px" width="50%">${clientes2020} atendidos</td>
                                             </tr>
                                         </tbody>
                                     </table>
